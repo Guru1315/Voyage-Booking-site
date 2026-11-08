@@ -93,21 +93,4 @@ All taken from the live deployment at 1440 × 900.
 
 Full details are in **[HOW-IT-WORKS.md](HOW-IT-WORKS.md)**.
 
-## 💬 How it was built
-
-Rebuilt with Claude Code from a handful of prompts, starting with:
-
-```text
-/clone-website https://github.com/alagappan567/cafe-3d-scroll
-```
-
-**[HOW-IT-WAS-BUILT.md](HOW-IT-WAS-BUILT.md)** lists every prompt word for word, with what each one did: reading the reference, porting it, testing at desktop and phone width, and deploying.
-
-This repo holds the showcase only: screenshots, recordings and write-ups. The site's source code isn't included.
-
-## 🙏 Credits
-
-- Design, copy, photos and frame sequences come from **[alagappan567/cafe-3d-scroll](https://github.com/alagappan567/cafe-3d-scroll)**. This is an independent rebuild of that repo's page.
-- Built with [Claude Code](https://claude.com/claude-code).
-
 > **Concept site.** NAVIS is a fictional cruise line. "Book a Voyage" and the contact details are placeholders: nothing is booked or sold.
