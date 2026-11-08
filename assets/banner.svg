@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="NAVIS: a cruise ship sailing over a 3D perspective ocean with waves rolling toward you">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070b14"/>
+      <stop offset="0.55" stop-color="#151c35"/>
+      <stop offset="0.66" stop-color="#2a3a6b"/>
+      <stop offset="0.66" stop-color="#0d1630"/>
+      <stop offset="1" stop-color="#0a0e1a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="66%" r="45%">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#2563eb" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="0.5" stop-color="#f59e0b" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c7d2e6"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" x2="1">
+      <stop offset="0" stop-color="#dfe6f3"/>
+      <stop offset="0.5" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#b9c4d8"/>
+    </linearGradient>
+    <linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="1.2"/></filter>
+    <clipPath id="sea"><rect x="0" y="264" width="1200" height="136"/></clipPath>
+  </defs>
+
+  <style>
+    /* Waves: lines start at the horizon and rush toward the viewer, widening as they come. */
+    .wave { fill: none; stroke: #93c5fd; stroke-linecap: round; transform-box: view-box; transform-origin: 600px 264px; animation: roll 4.2s cubic-bezier(.55,0,1,.45) infinite; opacity: 0; }
+    .w2 { animation-delay: -.6s } .w3 { animation-delay: -1.2s } .w4 { animation-delay: -1.8s }
+    .w5 { animation-delay: -2.4s } .w6 { animation-delay: -3s } .w7 { animation-delay: -3.6s }
+    @keyframes roll {
+      0%   { transform: translateY(0) scaleX(.25); opacity: 0; stroke-width: .6 }
+      15%  { opacity: .55 }
+      100% { transform: translateY(140px) scaleX(2.4); opacity: 0; stroke-width: 3 }
+    }
+    .ship { animation: bob 4.6s ease-in-out infinite; transform-box: view-box; transform-origin: 600px 262px; }
+    @keyframes bob { 0%,100% { transform: translateY(0) rotate(-.8deg) } 50% { transform: translateY(-5px) rotate(.8deg) } }
+    .approach { animation: approach 14s ease-in-out infinite alternate; transform-box: view-box; transform-origin: 600px 264px; }
+    @keyframes approach { from { transform: scale(.82) } to { transform: scale(1.06) } }
+    .lights { animation: twinkle 2.4s steps(2,end) infinite; }
+    .l2 { animation-delay: -1.2s }
+    @keyframes twinkle { 0%,100% { opacity: 1 } 50% { opacity: .55 } }
+    .reflect { animation: shimmer 2.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center top; }
+    @keyframes shimmer { 0%,100% { transform: scaleX(1); opacity: .9 } 50% { transform: scaleX(.86); opacity: .5 } }
+    .cloud { animation: drift 38s linear infinite; }
+    .c2 { animation-duration: 54s; animation-delay: -20s } .c3 { animation-duration: 46s; animation-delay: -34s }
+    @keyframes drift { from { transform: translateX(1300px) } to { transform: translateX(-500px) } }
+    .sun { animation: breathe 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes breathe { 0%,100% { transform: scale(1); opacity: .9 } 50% { transform: scale(1.12); opacity: 1 } }
+    .dot { fill: #ffffff; fill-opacity: .25; }
+    .bar { fill: #3b82f6; animation: progress 8s cubic-bezier(.4,0,.2,1) infinite; transform-box: fill-box; transform-origin: left center; }
+    @keyframes progress { 0% { transform: scaleX(0) } 85%,100% { transform: scaleX(1) } }
+    .frame { animation: count 8s steps(1,end) infinite; opacity: 0; }
+    .f1 { animation-name: f1 } .f2 { animation-name: f2 } .f3 { animation-name: f3 } .f4 { animation-name: f4 }
+    @keyframes f1 { 0%,24.99% { opacity: 1 } 25%,100% { opacity: 0 } }
+    @keyframes f2 { 0%,24.99% { opacity: 0 } 25%,49.99% { opacity: 1 } 50%,100% { opacity: 0 } }
+    @keyframes f3 { 0%,49.99% { opacity: 0 } 50%,74.99% { opacity: 1 } 75%,100% { opacity: 0 } }
+    @keyframes f4 { 0%,74.99% { opacity: 0 } 75%,100% { opacity: 1 } }
+    .rise { animation: rise 1.4s cubic-bezier(.16,1,.3,1) both; }
+    .rise2 { animation-delay: .25s } .rise3 { animation-delay: .5s }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; opacity: 1 } .wave { opacity: .3 } }
+  </style>
+
+  <!-- sky + sea -->
+  <rect width="1200" height="400" fill="url(#sky)"/>
+  <rect width="1200" height="400" fill="url(#glow)"/>
+  <circle class="sun" cx="600" cy="262" r="70" fill="url(#sun)" opacity=".9"/>
+
+  <!-- clouds -->
+  <g fill="#c7d2fe" opacity=".16" filter="url(#soft)">
+    <g class="cloud"><ellipse cx="0" cy="120" rx="120" ry="26"/><ellipse cx="70" cy="108" rx="80" ry="24"/></g>
+    <g class="cloud c2"><ellipse cx="0" cy="190" rx="160" ry="22"/><ellipse cx="-80" cy="180" rx="70" ry="18"/></g>
+    <g class="cloud c3"><ellipse cx="0" cy="70" rx="90" ry="20"/><ellipse cx="60" cy="62" rx="60" ry="16"/></g>
+  </g>
+
+  <!-- 3D sea: perspective rays to the vanishing point + rolling waves -->
+  <g clip-path="url(#sea)">
+    <g stroke="#3b82f6" stroke-opacity=".14" stroke-width="1">
+      <path d="M600 264 L-600 400 M600 264 L-200 400 M600 264 L100 400 M600 264 L350 400 M600 264 L520 400 M600 264 L680 400 M600 264 L850 400 M600 264 L1100 400 M600 264 L1400 400 M600 264 L1800 400"/>
+    </g>
+    <path class="wave"     d="M420 264 Q510 259 600 264 T780 264"/>
+    <path class="wave w2"  d="M420 264 Q510 268 600 264 T780 264"/>
+    <path class="wave w3"  d="M420 264 Q510 259 600 264 T780 264"/>
+    <path class="wave w4"  d="M420 264 Q510 268 600 264 T780 264"/>
+    <path class="wave w5"  d="M420 264 Q510 259 600 264 T780 264"/>
+    <path class="wave w6"  d="M420 264 Q510 268 600 264 T780 264"/>
+    <path class="wave w7"  d="M420 264 Q510 259 600 264 T780 264"/>
+  </g>
+  <line x1="0" y1="264" x2="1200" y2="264" stroke="#93c5fd" stroke-opacity=".35"/>
+
+  <!-- the ship, sailing toward you -->
+  <g class="approach">
+    <g class="ship">
+      <ellipse class="reflect" cx="600" cy="270" rx="120" ry="16" fill="url(#reflect)" filter="url(#blur2)"/>
+      <g transform="translate(600 262)">
+        <!-- hull -->
+        <path d="M-150 -16 L158 -16 Q150 -2 136 6 L-136 6 Q-146 -4 -150 -16 Z" fill="url(#hull)"/>
+        <path d="M-142 -2 L146 -2 Q142 3 136 6 L-136 6 Z" fill="#1e2d4a"/>
+        <!-- decks -->
+        <rect x="-128" y="-32" width="262" height="16" rx="2" fill="url(#deck)"/>
+        <rect x="-108" y="-46" width="214" height="14" rx="2" fill="url(#deck)"/>
+        <rect x="-84" y="-58" width="160" height="12" rx="2" fill="url(#deck)"/>
+        <rect x="-46" y="-68" width="88" height="10" rx="2" fill="#eef2fa"/>
+        <!-- windows -->
+        <g class="lights" stroke="#fbbf24" stroke-width="3" stroke-dasharray="4 5">
+          <line x1="-120" y1="-24" x2="126" y2="-24"/>
+          <line x1="-100" y1="-39" x2="100" y2="-39"/>
+        </g>
+        <g class="lights l2" stroke="#93c5fd" stroke-width="2.5" stroke-dasharray="3 6">
+          <line x1="-140" y1="-9" x2="148" y2="-9"/>
+          <line x1="-76" y1="-52" x2="70" y2="-52"/>
+        </g>
+        <!-- funnel + mast -->
+        <path d="M18 -68 L22 -88 L46 -88 L44 -68 Z" fill="#2563eb"/>
+        <rect x="21" y="-92" width="26" height="5" rx="1.5" fill="#0a0e1a"/>
+        <line x1="-30" y1="-68" x2="-30" y2="-96" stroke="#dfe6f3" stroke-width="2"/>
+        <circle cx="-30" cy="-97" r="2.4" fill="#f87171" class="lights"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- wordmark (left) -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#ffffff">
+    <text class="rise" x="64" y="104" font-size="54" font-weight="700" letter-spacing="18">NAVIS</text>
+  </g>
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect class="rise rise2" x="66" y="124" width="28" height="2" fill="#3b82f6"/>
+    <text class="rise rise2" x="104" y="129" font-size="11" font-weight="600" letter-spacing="4" fill="#93c5fd">3D SCROLL EXPERIENCE</text>
+    <text class="rise rise3" x="66" y="160" font-size="15" fill="#c7d2e6">Scroll-scrubbed canvas · 600 frames · GSAP ScrollTrigger</text>
+  </g>
+
+  <!-- frame counter (right): the scroll timeline -->
+  <g font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="12" fill="#c7d2e6" text-anchor="end">
+    <text x="1136" y="96" fill="#93c5fd" letter-spacing="3" font-size="10">SCROLL → FRAME</text>
+    <text class="frame f1" x="1136" y="122">001 · The Foundation</text>
+    <text class="frame f2" x="1136" y="122">130 · The Engineering</text>
+    <text class="frame f3" x="1136" y="122">200 · The Standards</text>
+    <text class="frame f4" x="1136" y="122">260 · The Launch</text>
+    <rect x="976" y="134" width="160" height="3" rx="1.5" fill="#ffffff" fill-opacity=".12"/>
+    <rect class="bar" x="976" y="134" width="160" height="3" rx="1.5"/>
+  </g>
+
+  <!-- progress dots, like the site's chapters -->
+  <g transform="translate(565 372)">
+    <rect class="dot" x="0" y="0" width="7" height="7" rx="3.5"/>
+    <rect x="13" y="0" width="24" height="7" rx="3.5" fill="#3b82f6"/>
+    <rect class="dot" x="43" y="0" width="7" height="7" rx="3.5"/>
+    <rect class="dot" x="56" y="0" width="7" height="7" rx="3.5"/>
+  </g>
+</svg>
