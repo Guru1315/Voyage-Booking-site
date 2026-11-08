@@ -1,6 +1,6 @@
 # How it works
 
-The live site is at **https://3d-cafe-site-iota.vercel.app**. It's one page, built with Next.js 16, React 19, TypeScript, GSAP ScrollTrigger and a 2D canvas. There's no WebGL. The "3D" comes from pre-rendered camera moves played back by scroll, plus CSS perspective.
+The live site is at **https://guru-voyage-booking.vercel.app/**. It's one page, built with Next.js 16, React 19, TypeScript, GSAP ScrollTrigger and a 2D canvas. There's no WebGL. The "3D" comes from pre-rendered camera moves played back by scroll, plus CSS perspective.
 
 ## Page order
 
