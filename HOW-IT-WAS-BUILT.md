@@ -1,17 +1,5 @@
 # How it was built
 
-These are the prompts used to build and ship this project with [Claude Code](https://claude.com/claude-code), copied word for word and in order. The notes under each one say what it led to.
-
----
-
-### 1. Start the rebuild
-
-```text
-/clone-website https://github.com/alagappan567/cafe-3d-scroll
-```
-
-This ran the `clone-website` workflow in an AI website-cloner template (Next.js 16, Tailwind v4).
-
 - **Read the reference.** The repo turned out to be a full Next.js app, not just docs. Despite its "cafe" name, its page is **NAVIS**, a luxury cruise landing page with three 300-frame scroll sequences. Its `UI layout/` folder holds four phone screenshots of a different design (a cocktail bar called ONDA), which NAVIS borrows its section rhythm from. The rebuild follows the page the code actually renders.
 - **Mapped sections to files.** Ten sections became small components: a shared frame-sequence hook, the hero, a reusable chapter, cards, galleries, about, and plan/CTA.
 - **Copied the real assets.** That means 600 scroll frames and 28 photos. A third frame folder in the repo was left out because no rendered section uses it.
