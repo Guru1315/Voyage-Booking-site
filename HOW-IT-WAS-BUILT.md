@@ -13,13 +13,9 @@
 Push and deploy
 ```
 
-The project had no git remote yet, so Claude asked where to push and where to deploy. The answers were "a repo URL I'll give you" and "a new Vercel project".
-
 ```text
 https://github.com/Guru1315/3D-cafe-site push here
 ```
-
-Claude pushed the branch, then created a new Vercel project (`3d-cafe-site`) and deployed to production. The page was re-tested on the live URL.
 
 ### 3. Point the root at the page
 
