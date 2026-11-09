@@ -28,7 +28,7 @@ This added a `/` → `/cafe` redirect, so **https://3d-cafe-site-iota.vercel.app
 ### 4. Turn the repo into a showcase
 
 ```text
-push and commit only what are the assessts and screenshots and how it done and how it works if otherthen this commited kindly remove and add this only also make 3d animated README section with the live demo
+Review your code in VScode then push this into your empty git repo with the live site so that user can test it
 ```
 
 This replaced the repo's contents with this showcase:
