@@ -31,7 +31,7 @@ This added a `/` → `/cafe` redirect, so **https://3d-cafe-site-iota.vercel.app
 Review your code in VScode then push this into your empty git repo with the live site so that user can test it
 ```
 
-This replaced the repo's contents with this showcase:
+This replaced the repo's contents with only with the assessts and screenshots in  this showcase:
 
 - screenshots from the live site at desktop and phone width
 - `assets/hero-scroll.gif`, recorded by scrolling the live hero in headless Chrome
