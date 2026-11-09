@@ -83,3 +83,5 @@ Automated headless-Chrome passes on the live site, at 1440×900 and 390×844:
 - card hover, leave, arrows and tap
 - tile hover, fleet tilt, the marquee moving, and nav anchors
 - no horizontal overflow, console errors, failed requests or broken images
+
+## 6. No Source code is provided in this repo due to some security issues if anyone need this kindly send me mail and i will surely provide all files.
